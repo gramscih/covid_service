@@ -15,7 +15,7 @@ def get_hospitals_name():
     return jsonify(files_name), 200
 
 
-@app.get("/hospital/<hospital_name>")
+@app.get("/hospitals/<hospital_name>")
 def get_hospital_data(hospital_name):
     file_path = DATA_PATH % hospital_name
     with open(file_path) as hells_data:
@@ -24,4 +24,4 @@ def get_hospital_data(hospital_name):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=80)
