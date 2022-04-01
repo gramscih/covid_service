@@ -23,7 +23,7 @@ def generate_patient_per_day(date):
     for _ in range(0, data_per_day):
         generated_data = {}
         generated_data["id"] = "{}{}".format(random.choice(
-            range(0, 1000)), chr(random.choice(range(65, 70))))
+            range(0, 2000)), chr(random.choice(range(65, 90))))
         generated_data["date"] = date
         generated_data["gender"] = gender()
         generated_data["age"] = age()
