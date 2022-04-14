@@ -15,12 +15,12 @@ def negative(): return random.choice(range(100, 10000))
 def vaccines(): return random.choice(range(0, 5))
 
 
-data_per_day = random.choice(range(100, 1000))
+def data_per_day(): return random.choice(range(100, 1000))
 
 
-def generate_patient_per_day(date):
+def generate_patients_per_day(date):
     result = []
-    for _ in range(0, data_per_day):
+    for _ in range(0, data_per_day()):
         generated_data = {}
         generated_data["id"] = "{}{}".format(random.choice(
             range(0, 2000)), chr(random.choice(range(65, 90))))
@@ -36,10 +36,11 @@ def generate_patient_per_day(date):
 
 def generate_dummy_data(days=365):
     data = {}
+    data["patients"] = []
     for index in range(0, days):
         date = (datetime.date.today() - datetime.timedelta(index)).isoformat()
         data["patients"] = data.get(
-            "patients", []) + generate_patient_per_day(date)
+            "patients", []) + generate_patients_per_day(date)
     return data
 
 
