@@ -7,7 +7,7 @@ import json
 FILE_PATH = "src/%s"
 
 
-def gender(): return random.choice(['Female', "Male"])
+def gender(): return random.choice(['Female', 'female', "Male", "male"])
 def age(): return random.choice(range(1, 100))
 def covid_test(): return random.choice(['positive', 'negative'])
 def confirm(): return random.choice(range(120, 10000))
